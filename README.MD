@@ -1,7 +1,16 @@
 # Rust Cache
 
 
-Rust Cache is a simple cache implementation written in Rust that can be used in Python.
+The code defines a Rust module called rust_cache that exposes a Python class called Cache using the pyo3 crate. The Cache struct contains an instance of StringCache, which is defined in the cache module. The StringCache struct is a simple implementation of an LRU cache for string keys and values.
+
+The Cache class has several methods defined using the pymethods attribute:
+
+new(capacity: usize): a constructor that creates a new Cache instance with the specified capacity.
+get(key: &str) -> Option<String>: a method that retrieves the value associated with a given key. If the key is not in the cache, None is returned.
+put(key: String, value: String): a method that inserts a key-value pair into the cache. If the cache is full, the least recently used key-value pair is removed to make room for the new entry.
+len() -> usize: a method that returns the number of key-value pairs currently in the cache.
+capacity() -> usize: a method that returns the maximum number of key-value pairs that can be stored in the cache.
+Finally, the rust_cache module is defined using the pymodule attribute, which allows it to be imported and used as a Python module. The Cache class is added to the module using the add_class method.
 
 
 ## Usage

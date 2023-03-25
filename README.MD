@@ -65,4 +65,4 @@ Clean up target file with ``cargo clean`` command
 
 After following these steps, you can test the package by opening a Python interactive shell and running import rust_cache.
 Like this :) 
-![img.png](img.png)
+![img_2.png](img_2.png)

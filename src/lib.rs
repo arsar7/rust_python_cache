@@ -1,11 +1,12 @@
 use pyo3::prelude::*;
 mod cache;
 
-use crate::cache::StringStringCache;
+use crate::cache::StringCache;
+
 
 #[pyclass]
 struct Cache {
-    inner: StringStringCache,
+    inner: StringCache,
 }
 
 #[pymethods]
@@ -13,7 +14,7 @@ impl Cache {
     #[new]
     fn new(capacity: usize) -> Self {
         Cache {
-            inner: StringStringCache::new(capacity),
+            inner: StringCache::new(capacity),
         }
     }
 
@@ -24,6 +25,15 @@ impl Cache {
     fn put(&mut self, key: String, value: String) {
         self.inner.put(key, value);
     }
+
+    fn len(&mut self) -> usize {
+        self.inner.data.len()
+    }
+
+    fn capacity(&mut self) -> usize {
+        self.inner.capacity
+    }
+
 }
 
 #[pymodule]

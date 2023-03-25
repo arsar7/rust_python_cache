@@ -28,7 +28,7 @@ Rust Cache is a simple cache implementation written in Rust that can be used in 
 
 3.Install the .whl package by running:
   ```shell
-  pip install target/wheels/*whl
+  pip install target/wheels/*whl --force-reinstall
   ```
 
 

@@ -1,14 +1,14 @@
 use std::collections::{HashMap, VecDeque};
 
-pub struct StringStringCache {
-    data: HashMap<String, String>,
-    capacity: usize,
+pub struct StringCache {
+    pub(crate) data: HashMap<String, String>,
+    pub(crate) capacity: usize,
     access_times: VecDeque<String>,
 }
 
-impl StringStringCache {
+impl StringCache {
     pub fn new(capacity: usize) -> Self {
-        StringStringCache {
+        StringCache {
             data: HashMap::new(),
             capacity: capacity,
             access_times: VecDeque::new(),
@@ -46,7 +46,7 @@ impl StringStringCache {
 #[cfg(test)]
 fn test_string_values() {
 
-    let mut cache = StringStringCache::new(3);
+    let mut cache = StringCache::new(3);
 
     // add some items to the cache
     cache.put("a".to_string(), "apple".to_string());

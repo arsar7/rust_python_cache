@@ -1,6 +1,6 @@
 import ctypes
 
-lib = ctypes.cdll.LoadLibrary("./target/release/librust_cache.rlib")
+lib = ctypes.cdll.LoadLibrary("./target/release/librust_cache.dylib")
 
 
 class Cache:

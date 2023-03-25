@@ -1,32 +1,50 @@
 # Rust Cache
 
 
-This is a simple cache implementation written in Rust.
+Rust Cache is a simple cache implementation written in Rust that can be used in Python.
 
 
-## Building and Testing
-
-To build the project, run the following command in the project root directory:
+## Usage
 
 
- 
-```shell
-cargo build --release --lib 
+### To use Rust Cache, follow these steps:
 
-```
+1.Create a virtual environment by running the following commands:
+  ```shell
+  python3 -m venv .env
+  source .env/bin/activate
+  pip install maturin>=0.14.15
+  ```
 
-This will build the project in release mode and generate a shared library file (librust_cache.dylib on macOS and librust_cache.so on Linux).
+2.Build Rust Cache with Maturin by running:
+  ```shell
+  maturin build
+  ```
 
-To run the tests, run the following command in the project root directory:
+  - To build for Silicon Chips, use:
+    ```shell
+    maturin build --target=x86_64-apple-darwin
+    ```
 
-```shell
-cargo test
-```
+3.Install the .whl package by running:
+  ```shell
+  pip install target/wheels/*whl
+  ```
 
-# Usage
 
-To use the library in a Python project, first build the shared library file using the command mentioned above. Then, use the following code to create a Cache object in Python:
+4.Test Rust Cache by running the following command:
+  ```shell
+  cargo test
+  ```
 
-```python
-python3 example.py
-```
+Clean up target file with ``cargo clean`` command
+
+5.Clean up the target file by running:
+  ```shell
+  cargo clean
+  ```
+
+
+After following these steps, you can test the package by opening a Python interactive shell and running import rust_cache.
+Like this :) 
+![img.png](img.png)

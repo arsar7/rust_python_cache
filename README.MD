@@ -1,12 +1,12 @@
 # Rust Cache
 
 
-The code defines a Rust module called rust_cache that exposes a Python class called Cache using the `pyo3 crate`.
-The `Cache` struct contains an instance of `StringCache`, which is defined in the cache module. The `StringCache` struct is a simple implementation of an LRU cache for string keys and values.
+The code defines a Rust module called **rust_cache** that exposes a Python class called **Cache** using the **pyo3 crate**.
+The _Cache_ struct contains an instance of _StringCache_, which is defined in the cache module. The _StringCache_ struct is a simple implementation of an LRU cache for string keys and values.
 
 
 
-The **Cache** class has several methods defined using the pymethods attribute:
+The **Cache** class has several methods defined using the _pymethods_ attribute:
 
 
 - ``new(capacity: usize)`` : a constructor that creates a new Cache instance with the specified capacity.
@@ -19,7 +19,7 @@ The **Cache** class has several methods defined using the pymethods attribute:
 
 - ``capacity() -> usize`` : a method that returns the maximum number of key-value pairs that can be stored in the cache.
 
-Finally, the rust_cache module is defined using the pymodule attribute, which allows it to be imported and used as a Python module. The Cache class is added to the module using the add_class method.
+Finally, the rust_cache module is defined using the _pymodule_ attribute, which allows it to be imported and used as a Python module. The Cache class is added to the module using the add_class method.
 
 
 ## Usage
